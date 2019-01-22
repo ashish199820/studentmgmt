@@ -1,7 +1,6 @@
 {
   "name": "sms",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +11,17 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongoose": "^5.4.4",
+    "mongoose": "^5.4.5",
     "nodemon": "^1.18.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashish199820/firstrepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashish199820/firstrepo/issues"
+  },
+  "homepage": "https://github.com/ashish199820/firstrepo#readme",
+  "description": ""
 }

@@ -7,5 +7,5 @@ var collegeSchema = new mongoose.Schema({
 });
 
 
-const college= mongoose.model('College',collegeSchema);
+const college= mongoose.model('college',collegeSchema);
 module.exports=college;

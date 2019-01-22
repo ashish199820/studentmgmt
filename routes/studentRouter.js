@@ -7,13 +7,20 @@ const Student = require('../models/student');
 
 /* GET users listing. */
 router.get('/',function(req, res){
-  Student.find({},function (err,student) {
+  Student.find({}).populate('college_id','name')
+  .exec(function (err,student) {
     if(err) throw err;
-    student.name+="weer";
-    var st = student;
-    st[0].name = st.name + "abc";
-    console.log(st);
-    res.json(st);
+   //var name1=student.name;
+   //var email = student.email;
+   //var reg_no1=student.reg_no;
+  // var id = student.college_id.name;
+ //var st={
+    //name:name1,
+   //
+   // college_id:id
+
+ /// }
+    res.json(student);
   });
 });
 

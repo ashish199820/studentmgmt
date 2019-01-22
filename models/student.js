@@ -13,10 +13,10 @@ var studentSchema = new mongoose.Schema({
     },
     college_id : {
         type:schema.Types.ObjectId,
-         ref:"College"
+         ref:"college"
     } 
 });
 
 
-const student= mongoose.model('Student',studentSchema);
+const student= mongoose.model('student',studentSchema);
 module.exports=student;

@@ -27,7 +27,7 @@ app.use('/api/colleges',collegeRouter);
 
 
 
-mongoose.connect("mongodb://localhost/mydb",{ useNewUrlParser: true })
+mongoose.connect("mongodb://127.0.0.1/hey",{ useNewUrlParser: true })
   .then(function(){
     console.log("database connected");
   })
@@ -35,7 +35,7 @@ mongoose.connect("mongodb://localhost/mydb",{ useNewUrlParser: true })
     console.log("could not connect to database")});
 
 
-const PORT = 3000;
+const PORT = 8080;
 app.listen(PORT,function(){
     console.log("Server running on port : "+PORT);
 });

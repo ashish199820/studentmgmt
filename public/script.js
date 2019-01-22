@@ -1,7 +1,7 @@
 function fun() {
   // console.log("table loaded");
   
-  fetch("http://localhost:3000/api/students", { method: "GET" })
+  fetch("http://localhost:8080/api/students", { method: "GET" })
     .then(function(response) {
       return response.json();
     })
@@ -15,7 +15,7 @@ function fun() {
         bodyRows += "<td>" + "<a href='details.html?id=" + data[i]._id + "'>" + data[i].name + "</a>" + "</td>";
         bodyRows += "<td>" + data[i].reg_no + "</td>";
         bodyRows += "<td>" + data[i].email + "</td>";
-        bodyRows += "<td>" + data[i].college_id + "</td>";
+        bodyRows += "<td>" + data[i].college_id.name + "</td>";
         bodyRows += "</tr>";
       }
 
@@ -32,7 +32,7 @@ function studentDetail() {
   var id = url.searchParams.get("id");
    console.log(id);
 
-  fetch("http://localhost:3000/api/students/"+id, { method : "GET" })
+  fetch("http://localhost:8080/api/students/"+id, { method : "GET" })
   .then(function(response) {
     return response.json();
   }).then(function(data) {
@@ -51,7 +51,7 @@ function studentDetail() {
 
 function deleteStudent(id) {
     console.log("id",id);
-  fetch("http://localhost:3000/api/students/"+id, { method : "DELETE" })
+  fetch("http://localhost:8080/api/students/"+id, { method : "DELETE" })
   .then(function(response) {
     if(response.status == 200) {
       window.location = "index.html";
@@ -76,7 +76,7 @@ function userform() {
   };
   // console.log(user);
 
-  fetch("http://localhost:3000/api/students", {
+  fetch("http://localhost:8080/api/students", {
     method: "POST",
 
     headers: {
@@ -95,7 +95,7 @@ function discolleges() {
   var form = document.getElementById("form");
   var dropdown = form.college;
   
-  fetch("http://localhost:3000/api/colleges", {
+  fetch("http://localhost:8080/api/colleges", {
     method : "GET"
   }).then(function(response) {
     return response.json();
@@ -118,7 +118,8 @@ function addCollege() {
         name : college
     };
     console.log(college);
-  fetch("http://localhost:3000/api/colleges", 
+  
+        fetch("http://localhost:8080/api/colleges", 
         { 
         method: "POST",
          headers: {
@@ -131,10 +132,14 @@ function addCollege() {
       window.location = "collegelist.html";
     }
   });
+    
+      
+    
+  
 }
 
 function displayColleges() {
-  fetch("http://localhost:3000/api/colleges", { method : "GET" })
+  fetch("http://localhost:8080/api/colleges", { method : "GET" })
   .then(function(response) {
     return response.json();
   }).then(function(data) {
